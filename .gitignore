@@ -1,2 +1,4 @@
 # Project exclude paths
 /rai-feature/
+.idea
+.xml
