@@ -1,5 +1,4 @@
-from featureExtraction import *
-
+# Description: This file is used to run the unit test for feature extraction functions
 import os
 import sys
 # Get the current script's directory
@@ -25,6 +24,7 @@ from featureExtraction import *
 from calculateFeatureOptions import *
 path = os.path.dirname(os.path.abspath(__file__))
 
+from featureExtraction import *
 
 class DiagCheck:
     def __init__(self):
