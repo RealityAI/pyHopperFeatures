@@ -86,8 +86,10 @@ class DiagCheck:
                 upper = 1.01
             pyFeData = [func(window, **feOpt) for window in self.windowedData]
 
-
-if __name__ == '__main__':
+def main():
     dg = DiagCheck()
     dg.setUp()
     dg.test_fe_data()
+
+if __name__ == '__main__':
+    main()
