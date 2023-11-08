@@ -7,6 +7,8 @@ setup(
     author_email="francisco.mendes.pv@renesas.com",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
+    package_data={'pyHopperFeatures.sample_data': ['*.csv']
+                  },
     install_requires=[
         'h5py==3.9.0',
         'scipy==1.10.1',
