@@ -1,18 +1,18 @@
-import unittest
-import sys
+from featureExtraction import *
 import os
-import h5py
-import numpy as np
-from pyHopperFeatures.src.featureExtraction import *
-from pyHopperFeatures.src.calculateFeatureOptions import *
+from featureExtraction import *
+from calculateFeatureOptions import *
+path = os.path.dirname(os.path.abspath(__file__))
 
-class TestFeatureSpace(unittest.TestCase):
-    def setUp(self):
+
+class DiagCheck:
+    def __init__(self):
         self.feList = None
         self.windowedData = None
         self.opt = None
         self.feListDict = None
 
+    def setUp(self):
         # Feature with error range <E-05
         self.feListDict = {
             'A1': A1, 'A3': A3, 'A4': A4, 'A5': A5, 'A6': A6,
@@ -20,7 +20,12 @@ class TestFeatureSpace(unittest.TestCase):
             'E1C1': E1C1, 'E1C2': E1C2, 'E1C3': E1C3, 'E1C4': E1C4, 'E1C5': E1C5,
             'E2C1': E2C1, 'E2C4': E2C4, 'E2C5': E2C5
         }
-
+        """
+        self.feListDict = {
+            'BA1':BA1,'BA3':BA3,'BA4':BA4,'BA5':BA5,'BA6':BA6,
+            'BC1':BC1,'BC2':BC2,'BC3':BC3,'BC4':BC4,'BC5':BC5,'BC6':BC6,
+        }
+        """
         # set up feature options
         self.opt = {
             'sampleRate': 8000,
@@ -31,8 +36,7 @@ class TestFeatureSpace(unittest.TestCase):
         # load and window raw data
         winLen = 256
         step = 128
-        path = os.path.dirname(os.path.abspath(__file__))
-        raw = np.genfromtxt(path + '/matlab_files/3channel_raw.csv', delimiter=',')
+        raw = np.genfromtxt(path + '/sample_data/3channel_raw.csv', delimiter=',')
         windowed = window_data(raw, winLen, step)
         self.windowedData = windowed
 
@@ -41,6 +45,8 @@ class TestFeatureSpace(unittest.TestCase):
 
         # pre-calculating feature options
         self.opt['MelFilterBank'] = computeMelFilterBank(self.opt['sampleRate'], winLen)
+        pass
+
 
     def test_fe_data(self):
         # test all the feature space functions in the dict
@@ -58,7 +64,9 @@ class TestFeatureSpace(unittest.TestCase):
                 lower = 0.99
                 upper = 1.01
             pyFeData = [func(window, **feOpt) for window in self.windowedData]
-            # Add your assertions here to compare pyFeData with expected results.
+
 
 if __name__ == '__main__':
-    unittest.main()
+    dg = DiagCheck()
+    dg.setUp()
+    dg.test_fe_data()
