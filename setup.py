@@ -9,6 +9,7 @@ setup(
     package_dir={"": "src"},
     package_data={'pyHopperFeatures': ['sample_data/**/*']
                   },
+    include_package_data=True,
     install_requires=[
         'h5py==3.9.0',
         'scipy==1.10.1',
