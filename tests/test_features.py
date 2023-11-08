@@ -3,8 +3,8 @@ import sys
 import os
 import h5py
 import numpy as np
-from pyHopperFeatures.src.featureExtraction import *
-from pyHopperFeatures.src.calculateFeatureOptions import *
+from src.pyHopperFeatures.featureExtraction import *
+from src.pyHopperFeatures.calculateFeatureOptions import *
 
 class TestFeatureSpace(unittest.TestCase):
     def setUp(self):
