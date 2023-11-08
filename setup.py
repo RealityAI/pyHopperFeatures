@@ -11,5 +11,10 @@ setup(
         'h5py==3.9.0',
         'scipy==1.10.1',
         'numpy==1.24.3'
-    ]
+    ],
+    entry_points={
+        "console_scripts": [
+            "pyHopperFeatures = pyHopperFeatures.run:main"
+        ]
+    }
 )
