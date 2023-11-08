@@ -16,8 +16,8 @@ setup(
         'numpy==1.24.3'
     ],
     entry_points={
-        "console_scripts": [
-            "pyHopperFeaturesDiagnostic = pyHopperFeatures.run:main"
-        ]
+        # "console_scripts": [
+        #     "pyHopperFeaturesDiagnostic = pyHopperFeatures.run:main"
+        # ]
     }
 )
