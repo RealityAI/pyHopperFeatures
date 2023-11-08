@@ -1,0 +1,33 @@
+A1,Raw Sample Data
+A2,Log Sample Data
+A3,Square Sample Data
+A4,Derivative of Data
+A5,Sign of Data
+A6,Zero Crossings
+BA1,Raw Data Statistics
+BA2,Log Data Statistics
+BA3,Square Data Statistics
+BA4,Derivative Data Statistics
+BA5,Sign of Data Statistics
+BA6,Zero Crossing Statistics
+C1,Spectral Magnitude
+C2,Log Spectral Power
+C3,Cepstral Coefficients
+C4,Phase Angle
+C5,Spectral Shape
+BC1,Spectral Magnitude Statistics
+BC2,Log Spectral Power Statistics
+BC3,Cepstral Coefficients Statistics
+BC4,Phase Angle Statistics
+E1C1,STFT Spectrogram
+E1C2,Log Power Spectrogram
+E1C3,Cepstrogram
+E1C4,Phase Spectrogram
+E1C5,Normalized Spectrogram
+E2C1,Spectral Periodicity
+E2C2,Log Spectral Periodicity
+E2C3,Cepstral Periodicity
+E2C4,Phase Spectral Periodicity
+E2C5,Normalized Spectral Periodicity
+PNGTWO1,Statistical Feature Group 1
+PNGTWO2,Statistical Feature Group 2
