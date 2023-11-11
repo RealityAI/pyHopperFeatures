@@ -2,14 +2,12 @@ from setuptools import setup, find_packages
 
 setup(
     name='pyHopperFeatures',
-    version='0.0.6',
+    version='0.0.7',
     author="francisco-rai",
     author_email="francisco.mendes.pv@renesas.com",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    # package_data={'pyHopperFeatures': ['sample_data/**/*']
-    #               },
-    package_data={'pyHopperFeatures': ['.mat','matlab_files']},
+    package_data={'pyHopperFeatures': ['matlab_files/*.mat', 'matlab_files/*/*.mat']},
     include_package_data=True,
     install_requires=[
         'h5py==3.9.0',
