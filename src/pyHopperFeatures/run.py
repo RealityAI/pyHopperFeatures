@@ -1,6 +1,7 @@
 # Description: This file is used to run the unit test for feature extraction functions
 import os
 import sys
+import h5py
 # Get the current script's directory
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -57,7 +58,7 @@ class DiagCheck:
         # load and window raw data
         winLen = 256
         step = 128
-        raw = np.genfromtxt(path + '/sample_data/3channel_raw.csv', delimiter=',')
+        raw = np.genfromtxt(path + '/matlab_files/3channel_raw.csv', delimiter=',')
         windowed = window_data(raw, winLen, step)
         self.windowedData = windowed
 
@@ -85,6 +86,13 @@ class DiagCheck:
                 lower = 0.99
                 upper = 1.01
             pyFeData = [func(window, **feOpt) for window in self.windowedData]
+            matTestPath = path+'/matlab_files/'+feSpace+'.mat'
+            with h5py.File(matTestPath, 'r') as f:
+                a_group_key = list(f.keys())[0]
+                matOut = np.array(f[a_group_key])
+            print('Python/Matlab output MAX difference in feature space: ' + feSpace +' is off by: '+ str(np.max(np.abs(pyFeData-matOut))))
+            # assertTrue(lower<1+np.average((pyFeData)-matOut)<upper)
+
 
 def main():
     dg = DiagCheck()
