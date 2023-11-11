@@ -1,1 +1,1 @@
-recursive-include src/pyHopperFeatures/matlab_files *.mat *.csv
+recursive-include src/pyHopperFeatures/matlab_files/*.mat
