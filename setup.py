@@ -9,7 +9,8 @@ setup(
     package_dir={"": "src"},
     # package_data={'pyHopperFeatures': ['sample_data/**/*']
     #               },
-    package_data={'pyHopperFeatures': ['*.csv', 'sample_data/*.csv']},
+    # package_data={'pyHopperFeatures': ['*.csv', 'sample_data/*.csv']},
+    package_data={'pyHopperFeatures': ['matlab_files']},
     include_package_data=True,
     install_requires=[
         'h5py==3.9.0',
