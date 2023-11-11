@@ -1,2 +1,2 @@
 include src/pyHopperFeatures/sample_data/3channel_raw.csv
-include src/pyHopperFeatures/matlab_files/A1.mat
+include src/pyHopperFeatures/matlab_files/3channel_raw.csv
